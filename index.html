@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boo-gie! — Bougies artisanales</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="boo-gie-logo.png" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-left">
+      <img src="boo-gie-logo.png" alt="Boo-gie logo" class="nav-logo">
+      <span class="brand">Boo-gie!</span>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="#home">Accueil</a>
+      <a class="nav-link" href="#catalog">Catalogue</a>
+      <a class="nav-link" href="#gallery">Galerie</a>
+      <a class="nav-link" href="#about">À propos</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <button id="open-cart" class="cart-btn">🛒 <span id="cart-count">0</span></button>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <img src="boo-gie-logo.png" alt="logo" class="hero-logo">
+      <h1 class="hero-title">Boo-gie! — Bougies artisanales</h1>
+      <p class="hero-sub"> Entre l’ombre et la lumière, Boo-gie ! Ça fond, ça brille, ça vit. ✨ -</p>
+      <div class="hero-cta">
+        <a class="btn" href="#catalog">Voir le catalogue</a>
+        <a class="btn ghost" href="#gallery">Nos créations</a>
+      </div>
+    </div>
+    <div class="sparkles" aria-hidden="true"></div>
+  </header>
+
+  <!-- SOCIALS -->
+  <section class="socials-strip">
+  <div class="socials-inner">
+    <a href="https://instagram.com" target="_blank" rel="noopener" class="social-square">Instagram</a>
+    <a href="https://facebook.com" target="_blank" rel="noopener" class="social-square">Facebook</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-square">TikTok</a>
+  </div>
+</section>
+
+
+  <!-- CATALOGUE -->
+  <section id="catalog" class="section">
+    <h2 class="section-title">Catalogue</h2>
+    <p class="section-desc">Choisis ta bougie, personnalise si tu veux — ajoute au panier et commande via WhatsApp.</p>
+    <div id="products" class="product-grid">
+      <!-- Les produits sont injectés par JS -->
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section soft">
+    <h2 class="section-title">Galerie</h2>
+    <p class="section-desc">Nos créations — mises à jour régulièrement.</p>
+    <div id="gallery-grid" class="gallery-grid">
+      <!-- images dynamiques -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">À propos</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Histoire de Boo-gie</h3>
+        <p>
+🎉 31.10.2025 — la naissance de Boo-gie.
+Notre petit atelier artisanal allume sa première flamme ✨
+Une marque qui commence… une lumière qui grandit 🕯️🤍.
+nos bougies : </p>
+        <ul>
+          <li>sont faites à la main</li>
+          <li>Parfums naturels</li>
+          <li>Á base de cire d’abeille 🐝 100% naturelle</li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="boo-gie-logo.png" alt="fantome" />
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section soft">
+    <h2 class="section-title">Avis clients</h2>
+    <div id="reviews-list" class="reviews-list">
+      <!-- Avis hardcoded ou dynamiques -->
+      <blockquote class="review">« .... ! » — pas encore </blockquote>
+      <blockquote class="review">«..... ! » — pas encore</blockquote>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact & Commandes</h2>
+    <p class="section-desc">Tu peux nous écrire ou commander directement via WhatsApp.</p>
+
+    <div class="contact-grid">
+      <form id="contact-form" class="contact-form">
+        <label>Nom<input type="text" id="name" required></label>
+        <label>Email<input type="email" id="email" required></label>
+        <label>Message<textarea id="message" rows="4" required></textarea></label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Envoyer</button>
+          <button type="button" id="whatsapp-order" class="btn whatsapp">Commander via WhatsApp</button>
+        </div>
+      </form>
+
+      <div class="contact-info">
+        <h3>Infos</h3>
+        <p>Téléphone / WhatsApp : <strong id="wa-phone">+213 558857832</strong></p>
+        <p>Adresse : WILAYA BOUIRA , bouira</p>
+        <div class="mini-gallery" id="mini-gallery">
+          <!-- mini images -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>© <span id="year"></span> Boo-gie! — Bougies artisanales</div>
+    <p> By M&Z</p>
+    <div class="footer-links">
+      <a href="#about">À propos</a> · <a href="#contact">Contact</a>
+    
+    </div>
+  </footer>
+
+  <!-- CART SIDEPANEL -->
+  <aside id="cart-panel" class="cart-panel" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Panier</h3>
+      <button id="close-cart" class="close">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total : <strong id="cart-total">0,00 DA</strong></div>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn ghost">Vider</button>
+        <button id="checkout-wa" class="btn whatsapp">Commander via WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close">✕</button>
+    <img id="lb-img" src="" alt="agrandi">
+    <div id="lb-caption" class="lb-caption"></div>
+    <button id="lb-prev" class="lb-nav">‹</button>
+    <button id="lb-next" class="lb-nav">›</button>
+  </div>
+
+  <div id="float-whatsapp" class="float-whatsapp" title="Commander via WhatsApp">💬</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
