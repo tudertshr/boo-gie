@@ -1,7 +1,7 @@
 /* script.js - logique SPA simple, produits, galerie, panier, whatsapp */
 
 // ------- CONFIG / données (modifie ici) -------
-const WHATSAPP_NUMBER = "+213 558857832"; // <-- remplace par ton numéro (format international, ex: +33123456789)
+const WHATSAPP_NUMBER = "+213558857832"; // <-- remplace par ton numéro (format international, ex: +33123456789)
 document.getElementById('wa-phone').textContent = WHATSAPP_NUMBER;
 const PRODUCTS = [
   { id: "p1", name: "Rose Velours", price: 500 , img: "img/candle1.jpeg", desc: "Bougie parfumée rose, 220g."},
@@ -266,5 +266,6 @@ cartItemsEl.addEventListener('click', (e) => {
     changeQty(id, op);
   }
 });
+
 
 
