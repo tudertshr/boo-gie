@@ -2,12 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Boo-gie! — Bougies artisanales</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="boo-gie-logo.png" />
 </head>
 <body>
+
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-left">
@@ -36,6 +37,122 @@
       </div>
     </div>
     <div class="sparkles" aria-hidden="true"></div>
+
+<!-- bouton flottant panier -->
+<button id="floating-cart-btn" class="floating-btn">🛒</button>
+
+
+<!--_____________________________________________ Bouton pour ouvrir l'IA ___________________________________________________-->
+<!-- BOULE FLOTTANTE -->
+<div id="float-ai">🕯️</div>
+
+<!-- MINI CHAT -->
+<div id="ai-chat">
+  <div id="ai-chat-header">
+    Boo-gie IA
+    <button id="close-ai-chat">✖</button>
+  </div>
+  <div id="ai-chat-messages"></div>
+  <div id="ai-chat-input">
+    <input type="text" id="ai-input" placeholder="Tape ton message...">
+    <button id="ai-send">Envoyer</button>
+  </div>
+</div>
+
+
+
+<!-- CUSTOMIZER MODAL -->
+
+
+<div id="custom-modal" class="custom-modal" aria-hidden="true">
+  <div class="custom-panel">
+    <button id="close-custom" class="close">✕</button>
+    <h3>Créer ta bougie personnalisée</h3>
+    <form id="custom-form">
+      <div class="form-row">
+        <label>Parfum
+          <select id="custom-parfum" required>
+            
+<!-- parfum ________________________________________________________________________________________________________________________________ -->
+            <option value="Vanille">Vanille</option>
+            <option value="Jasmin">Jasmin</option>
+            <option value="Rose"> caramel</option>
+            <option value="lavande">lavande</option>
+            <option value="Bois">Bois & Épices</option>
+<!-- parfum ___________________________________________________________________________________________________________________________________ -->
+          </select>
+        </label>
+        <label>Modèle
+          <select id="custom-modele" required>
+    
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Couleur
+          <!-- color picker simple + fallback select -->
+          <div id="color-options" class="color-grid"></div>
+        </label>
+        <label>Quantité
+          <input id="custom-qty" type="number" min="1" value="1" required>
+        </label>
+      </div>
+
+      <label>Message / Options (facultatif)
+        <input id="custom-message" type="text" placeholder="Ex: ajouter ruban doré, sans boîte...">
+      </label>
+
+      <label>Image d'inspiration (optionnelle)
+        <input id="custom-image" type="file" accept="image/*">
+      </label>
+
+      <div class="custom-preview">
+  <h4>Aperçu</h4>
+
+  <div id="preview-box" class="preview-box">
+    
+    <!-- Image à gauche -->
+<img id="preview-img" 
+     src="" 
+     alt="bougie" 
+     onerror="this.style.display='none'; document.getElementById('emoji-fallback').style.display='block';"
+     style="max-width:120px;border-radius:8px;margin-top:8px;">
+<span id="emoji-fallback" style="font-size:60px;display:none;">🕯️</span>
+
+
+    <!-- Infos à droite -->
+    <div id="preview-meta" class="preview-meta">
+      <div id="preview-parfum">Parfum: —</div>
+      <div id="preview-modele">Modèle: —</div>
+      <div id="preview-couleur">Couleur: —</div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="form-actions" style="margin-top:12px;justify-content:space-between">
+        <div style="align-self:center;color:var(--muted);font-weight:600">Prix estimé: <span id="custom-price">0 DA</span></div>
+        <div>
+          <button type="button" id="add-custom-to-cart" class="btn">Ajouter au panier</button>
+          <button type="button" id="cancel-custom" class="btn ghost">Annuler</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- bouton pour ouvrir le modal dans la section catalogue -->
+<div style="
+  max-width:1100px;
+  margin:14px auto 0;
+  display:flex;
+  justify-content:center; /* centre horizontalement */
+  padding:0 20px;">
+  <button id="open-custom-btn" class="btn ghost">Créer une bougie personnalisée</button>
+</div>
+
+
   </header>
 
   <!-- SOCIALS -->
@@ -126,6 +243,9 @@ nos bougies : </p>
     </div>
   </section>
 
+
+
+
   <!-- FOOTER -->
   <footer class="footer">
     <div>© <span id="year"></span> Boo-gie! — Bougies artisanales</div>
@@ -163,8 +283,7 @@ nos bougies : </p>
 
   <div id="float-whatsapp" class="float-whatsapp" title="Commander via WhatsApp">💬</div>
 
+   <script src="AI/AI.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-
